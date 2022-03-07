@@ -1,12 +1,18 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post } from '@nestjs/common';
 import { AppService } from './app.service';
 
-@Controller()
+// Controller는 요청과 응답에 대해서만 안다.
+@Controller('abc')
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
+  @Get('user') // GET /abc/user
   getHello(): string {
-    return this.appService.getHello();
+    return this.appService.getUser();
+  }
+
+  @Post('user') // POST /abc/user
+  postHello(): string {
+    return this.appService.postUser();
   }
 }
