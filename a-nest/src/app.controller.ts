@@ -2,9 +2,14 @@ import { Controller, Get, Post } from '@nestjs/common';
 import { AppService } from './app.service';
 
 // Controller는 요청과 응답에 대해서만 안다.
-@Controller('abc')
+@Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
+
+  @Get() // dotenv test
+  getDotEnv() {
+    return this.appService.getDotEnv();
+  }
 
   @Get('user') // GET /abc/user
   getHello(): string {
