@@ -37,3 +37,5 @@ lerna-debug.log*
 # 추가 
 .env.*
 .env
+.env.development
+.env.production
