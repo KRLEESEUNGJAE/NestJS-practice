@@ -31,7 +31,7 @@ const config: TypeOrmModuleOptions = {
   cli: { migrationsDir: 'src/migrations' },
   autoLoadEntities: true,
   charset: 'utf8mb4',
-  synchronize: false,
+  synchronize: false, //! 처음에 db생성할 때 한번만 true 로 변경하고 서버 시작하면 db 생성됨, 이후에는 false로 유지 -> 안하면 서버 킬 때마다 db 새로 만듬.
   logging: true,
   keepConnectionAlive: true,
 };
