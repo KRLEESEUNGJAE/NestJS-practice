@@ -16,18 +16,6 @@ export class UsersService {
     private usersRepository: Repository<Users>,
   ) {}
   async join(email: string, nickname: string, password: string) {
-    if (!email) {
-      // email 없음 error
-      throw new BadRequestException('이메일이 존재하지 않습니다');
-    }
-    if (!nickname) {
-      // nickname 없음 error
-      throw new BadRequestException('닉네임이 존재하지 않습니다');
-    }
-    if (!password) {
-      // password 없음 error
-      throw new BadRequestException('비밀번호가 존재하지 않습니다');
-    }
     const user = await this.usersRepository.findOne({ where: { email } });
     if (user) {
       // 이미 존재하는 유저 error
