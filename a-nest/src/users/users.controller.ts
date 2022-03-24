@@ -5,6 +5,7 @@ import {
   Post,
   Req,
   Res,
+  UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
@@ -46,6 +47,7 @@ export class UsersController {
     type: UserDto,
   })
   @ApiOperation({ summary: '로그인' })
+  @UseGuards(LocalAuthGuard)
   @Post('login')
   login(@User() user) {
     return user;
