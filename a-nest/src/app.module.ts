@@ -17,6 +17,7 @@ import { Mentions } from './entities/Mentions';
 import { Users } from './entities/Users';
 import { WorkspaceMembers } from './entities/WorkspaceMembers';
 import { Workspaces } from './entities/Workspaces';
+import { AuthModule } from './auth/auth.module';
 
 /* const getEnv = async () => {
   const response = await axios.get('/외부서버 비밀키 요청');
@@ -28,6 +29,7 @@ import { Workspaces } from './entities/Workspaces';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
+    AuthModule,
     UsersModule,
     WorkspacesModule,
     ChannelsModule,

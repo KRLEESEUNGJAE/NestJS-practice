@@ -11,6 +11,7 @@ import {
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { User } from 'src/common/dto/decorators/user.decorator';
 import { UserDto } from 'src/common/dto/user.dto';
+import { LocalAuthGuard } from '../auth/local-auth.guard';
 import { JoinRequestDto } from './dto/join.request.dto';
 import { UsersService } from './users.service';
 
